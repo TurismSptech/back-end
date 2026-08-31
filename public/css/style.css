@@ -11,7 +11,7 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f7f6;
-    color: #26332f;
+    color: #2D180E;
 }
 
 a {
@@ -25,7 +25,7 @@ button, input, textarea {
 nav {
     width: 100%;
     height: 54px;
-    background: #ffffff;
+    background: #eee5d97f;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -45,7 +45,11 @@ nav {
 .titulo p {
     font-size: 20px;
     font-weight: 700;
-    color: #1d5c4b;
+    color: #814D35;
+
+    span{
+        color: #2D180E;
+    }
 }
 
 .links {
@@ -58,14 +62,14 @@ nav {
 }
 
 .escolhaLinks {
-    color: #3d4b46;
+    color: #63331C;
     font-size: 15px;
     font-weight: 500;
     transition: 0.3s;
 }
 
 .escolhaLinks:hover {
-    color: #136955;
+    color: #2D180E;
     font-weight: 600;
     transform: translateY(-1px);
     transition: 500ms;
@@ -78,14 +82,14 @@ nav {
 }
 
 .escolhaLinks.login {
-    background: #1d8064;
+    background: #63331C;
     color: #ffffff;
     padding: 8px 20px;
     border-radius: 8px;
 }
 
 .escolhaLinks.login:hover {
-    background: #166550;
+    background: #2D180E;
 }
 
 #hero-section {
@@ -158,14 +162,14 @@ nav {
 .servicos-titulo {
     font-size: 36px;
     font-weight: 700;
-    color: #21483d;
+    color: #2D180E;
     margin-bottom: 15px;
 }
 
 .servicos-texto {
     font-size: 17px;
     line-height: 1.7;
-    color: #66736e;
+    color: #A37A5E;
 }
 
 .servicos-cards {
@@ -181,8 +185,8 @@ nav {
     min-height: 220px;
     padding: 35px 30px;
     border-radius: 14px;
-    background: #f4f8f6;
-    border: 1px solid #e1ebe7;
+    background: #eee5d97f;
+    border: 1px solid #eee5d97f;
     transition: 0.3s;
 }
 
@@ -194,12 +198,12 @@ nav {
 .servicos-curso {
     font-size: 21px;
     font-weight: 700;
-    color: #1d8064;
+    color: #814D35;
     margin-bottom: 18px;
 }
 
 .servicos-descricao {
-    color: #65726d;
+    color: #A37A5E;
     font-size: 15px;
     line-height: 1.7;
 }
@@ -210,7 +214,7 @@ nav {
     justify-content: space-between;
     gap: 70px;
     padding: 100px 9%;
-    background: #eef5f2;
+    background: #eee5d97f;
 }
 
 .intro {
@@ -221,16 +225,16 @@ nav {
 .conhecer-titulo {
     font-size: 38px;
     line-height: 1.25;
-    color: #21483d;
+    color: #2D180E;
     margin-bottom: 25px;
 }
 
 .conhecer-titulo span {
-    color: #1d8064;
+    color: #814D35;
 }
 
 .conhecer-texto {
-    color: #66736e;
+    color: #A37A5E;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -243,18 +247,19 @@ nav {
     display: inline-block;
     padding: 13px 25px;
     border-radius: 8px;
-    background: #1d8064;
+    background: #814D35;
     color: #ffffff;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .conhecer-projeto:hover {
-    background: #166550;
+    background: #63331C;
     transform: translateY(-2px);
 }
 
 .conhecer-img {
+    height: 580px;
     width: 46%;
     max-width: 550px;
     border-radius: 16px;
@@ -273,12 +278,12 @@ nav {
 
 .como-titulo h2 {
     font-size: 34px;
-    color: #21483d;
+    color: #2D180E;
     margin-bottom: 12px;
 }
 
 .como-titulo p {
-    color: #66736e;
+    color: #A37A5E;
     font-size: 16px;
 }
 
@@ -293,33 +298,33 @@ nav {
 .etapa {
     flex: 1;
     padding: 30px;
-    background: #f5f8f7;
+    background: #eee5d97f;
     border-radius: 14px;
-    border: 1px solid #e2ebe7;
+    border: 1px solid #eee5d97f;
 }
 
 .etapa-numero {
     font-size: 15px;
     font-weight: 700;
-    color: #1d8064;
+    color: #63331C;
     margin-bottom: 20px;
 }
 
 .etapa h3 {
-    color: #29453d;
+    color: #2D180E;
     font-size: 20px;
     margin-bottom: 12px;
 }
 
 .etapa p {
-    color: #6b7772;
+    color: #A37A5E;
     font-size: 15px;
     line-height: 1.6;
 }
 
 .recursos {
     padding: 90px 8%;
-    background: #eef5f2;
+    background: #f1ede77f;
 }
 
 .recursos-titulo {
@@ -329,12 +334,12 @@ nav {
 
 .recursos-titulo h2 {
     font-size: 34px;
-    color: #21483d;
+    color: #2D180E;
     margin-bottom: 12px;
 }
 
 .recursos-titulo p {
-    color: #66736e;
+    color: #A37A5E;
 }
 
 .recursos-container {
@@ -353,13 +358,13 @@ nav {
 }
 
 .recurso-card h3 {
-    color: #1d8064;
+    color: #63331C;
     font-size: 19px;
     margin-bottom: 15px;
 }
 
 .recurso-card p {
-    color: #68756f;
+    color: #A37A5E;
     font-size: 14px;
     line-height: 1.7;
 }
@@ -374,14 +379,14 @@ nav {
     max-width: 600px;
     margin: auto;
     padding: 45px;
-    background: #f5f8f7;
-    border: 1px solid #e0e9e5;
+    background: #f1ede77f;
+    border: 1px solid #f1ede77f;
     border-radius: 16px;
 }
 
 .tituloCont {
     text-align: center;
-    color: #21483d;
+    color: #63331C;
     font-size: 30px;
     margin-bottom: 35px;
 }
@@ -389,25 +394,25 @@ nav {
 .labelContato {
     display: block;
     margin-bottom: 8px;
-    color: #34453f;
+    color: #63331C;
     font-size: 14px;
     font-weight: 600;
 }
 
 .inputContato, .mensagemContato {
     width: 100%;
-    border: 1px solid #d2ded9;
+    border: 1px solid #e1decf7f;
     border-radius: 8px;
     padding: 13px 15px;
     margin-bottom: 22px;
     background: #ffffff;
-    color: #293b35;
+    color: #63331C;
     outline: none;
     font-size: 14px;
 }
 
 .inputContato:focus, .mensagemContato:focus {
-    border-color: #1d8064;
+    border-color: #814D35;
 }
 
 .mensagemContato {
@@ -420,7 +425,7 @@ nav {
     padding: 13px;
     border: none;
     border-radius: 8px;
-    background: #1d8064;
+    background: #63331C;
     color: #ffffff;
     font-size: 15px;
     font-weight: 600;
@@ -429,13 +434,13 @@ nav {
 }
 
 .formulario button:hover {
-    background: #166550;
+    background: #814D35;
 }
 
 .footer {
     padding: 25px;
     text-align: center;
-    background: #183c32;
+    background: #2D180E;
     color: #dce9e4;
     font-size: 13px;
 }
