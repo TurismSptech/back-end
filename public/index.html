@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="icon" type="image/png" href=".assets/imgs/logo.png">
+    <script src="js/mailer.js"></script>
   </head>
   <body>
     <nav>
-
+        
         <div class="titulo">
             <p><Span>Tour</Span>Wise</p>
         </div>
@@ -177,18 +178,21 @@
             <h2 class="tituloCont">Entre em contato</h2>
 
             <label class="labelContato" for="nome">Nome do representante</label>
-            <input type="text" class="inputContato" id="nome" name="nome">
+            <input type="text" class="inputContato" id="ipt_nome" name="nome">
 
             <label class="labelContato" for="empresa">Nome de empresa</label>
-            <input type="text" class="inputContato" id="empresa" name="empresa">
+            <input type="text" class="inputContato" id="ipt_empresa" name="empresa">
 
             <label class="labelContato">E-mail</label>
-            <input type="email"class="inputContato" id="email" name="email">
+            <input type="email"class="inputContato" id="ipt_email" name="email">
+
+            <label class="labelContato">Assunto</label>
+            <input type="text" class="inputContato" id="ipt_assunto" name="assunto">
 
             <label class="labelContato">Motivo do contato</label>
-            <textarea class="mensagemContato" id="mensagem" name="mensagem"></textarea>
+            <textarea class="mensagemContato" id="ipt_mensagem" name="mensagem"></textarea>
 
-            <button type="submit">Enviar</button>
+            <button onclick="enviar()" type="button">Enviar</button>
         </form>
     </section>
 
