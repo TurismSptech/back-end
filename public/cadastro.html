@@ -6,203 +6,153 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>TourWise | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/auth.css" />
   <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+<body onload="listarAgencias()">
+  <nav class="auth-nav" aria-label="Navegação principal">
+    <a class="auth-brand" href="index.html" aria-label="TourWise - página inicial">
+      <span>Tour</span>Wise
+    </a>
+    <div class="auth-nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#solucoes">Soluções</a>
+      <a href="index.html#sobre-nos">Sobre nós</a>
+      <a href="index.html#como-funciona">Como funciona</a>
+      <a href="index.html#contato">Contato</a>
     </div>
-  </div>
-  <!--header fim-->
+    <a class="auth-nav-action" href="login.html">Login</a>
+  </nav>
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
+  <main class="auth-main">
+    <section class="auth-panel auth-panel-register" aria-labelledby="auth-title">
+      <p class="auth-eyebrow">Comece a usar o TourWise</p>
+      <h1 id="auth-title">Cadastro de agente</h1>
+      <p class="auth-description">Crie seu acesso e conecte-se à sua agência.</p>
+
+      <div class="auth-message" id="cardErro" role="status" aria-live="polite">
         <span id="mensagem_erro"></span>
       </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
 
-        <div id="div_erros_login"></div>
+      <form class="auth-form" onsubmit="return cadastrar()">
+        <label for="agencia_input">Agência</label>
+        <select id="agencia_input" required>
+          <option value="">Selecione sua agência</option>
+        </select>
+
+        <label for="email_input">E-mail</label>
+        <input id="email_input" type="email" maxlength="45" placeholder="seuemail@agencia.com" autocomplete="email" required />
+
+        <label for="senha_input">Senha</label>
+        <input id="senha_input" type="password" maxlength="45" placeholder="Crie uma senha" autocomplete="new-password" required />
+
+        <label for="confirmacao_senha_input">Confirme sua senha</label>
+        <input id="confirmacao_senha_input" type="password" maxlength="45" placeholder="Digite a senha novamente" autocomplete="new-password" required />
+
+        <button class="auth-submit" type="submit">Cadastrar como agente</button>
+      </form>
+
+      <div id="div_aguardar" class="auth-loading" aria-live="polite">
+        <img src="./assets/circle-loading.gif" id="loading-gif" alt="Carregando" />
       </div>
-    </div>
-  </div>
+      <div id="div_erros_login"></div>
+      <p class="auth-switch">Já tem acesso? <a href="login.html">Entrar na plataforma</a></p>
+    </section>
+  </main>
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
-    </div>
-  </div>
-  <!--footer fim-->
+  <footer class="auth-footer">TourWise · Inteligência para o turismo</footer>
 </body>
 
 </html>
 
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
-
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
+    var emailVar = email_input.value.trim();
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var agenciaVar = agencia_input.value;
 
-    // Verificando se há algum campo em branco
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
+    if (!emailVar || !senhaVar || !confirmacaoSenhaVar || !agenciaVar) {
+      mostrarErro("Preencha todos os campos.");
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
+    if (senhaVar !== confirmacaoSenhaVar) {
+      mostrarErro("As senhas não coincidem.");
+      return false;
     }
 
-    // Enviando o valor da nova input
+    aguardar();
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        idAgenciaServer: agenciaVar
       }),
     })
       .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+        if (!resposta.ok) {
+          return resposta.text().then(function (mensagem) {
+            throw new Error(mensagem || "Houve um erro ao realizar o cadastro.");
+          });
         }
+        cardErro.style.display = "block";
+        mensagem_erro.textContent = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        setTimeout(function () {
+          window.location = "login.html";
+        }, 2000);
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
+      .catch(function (erro) {
+        mostrarErro(erro.message);
+      })
+      .finally(function () {
         finalizarAguardar();
       });
 
     return false;
   }
 
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
+  function listarAgencias() {
+    fetch("/usuarios/agencias", {
       method: "GET",
     })
       .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
+        if (!resposta.ok) {
+          throw new Error("Não foi possível carregar as agências.");
+        }
+        return resposta.json();
+      })
+      .then(function (agencias) {
+        agencias.forEach(function (agencia) {
+          var opcao = document.createElement("option");
+          opcao.value = agencia.id;
+          opcao.textContent = agencia.nome;
+          agencia_input.appendChild(opcao);
         });
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
+      .catch(function (erro) {
+        mostrarErro(erro.message);
       });
+  }
+
+  function mostrarErro(mensagem) {
+    cardErro.style.display = "block";
+    mensagem_erro.textContent = mensagem;
+    finalizarAguardar();
   }
 
   function sumirMensagem() {
