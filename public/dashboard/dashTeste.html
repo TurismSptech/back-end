@@ -16,6 +16,7 @@
         }
 
         body {
+            --sidebar-width: clamp(220px, 20vw, 300px);
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f5f7f6;
             color: #2D180E;
@@ -36,19 +37,19 @@
             left: 0;
             z-index: 999;
             height: 100vh;
-            width: 20%;
+            width: var(--sidebar-width);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 28px 18px;
+            padding: clamp(18px, 2.2vw, 28px) clamp(12px, 1.4vw, 18px);
             border-right: 3px solid #814D35;
             background-color: #2D180E;
             color: #ffffff;
         }
 
         .titulo-logo h1 {
-            font-size: 28px;
+            font-size: clamp(22px, 2.2vw, 28px);
             font-weight: 700;
             color: #A37A5E;
             letter-spacing: 0.5px;
@@ -157,13 +158,13 @@
         }
 
         .dash {
-            width: 80%;
+            width: calc(100% - var(--sidebar-width));
             position: relative;
             top: 0;
-            left: 20%;
+            left: var(--sidebar-width);
             background-color: #f5f7f6;
             min-height: 100vh;
-            padding: 28px 36px 50px 36px;
+            padding: clamp(18px, 2.2vw, 28px) clamp(18px, 2.8vw, 36px) 50px;
         }
 
         .topo-dash {
@@ -171,20 +172,20 @@
             justify-content: space-between;
             align-items: center;
             background-color: #eee5d9;
-            padding: 18px 24px;
+            padding: clamp(14px, 1.4vw, 18px) clamp(16px, 1.9vw, 24px);
             border-radius: 14px;
             border: 1px solid #e1d6c6;
             margin-bottom: 20px;
         }
 
         .topo-dash h2 {
-            font-size: 22px;
+            font-size: clamp(19px, 1.8vw, 22px);
             color: #2D180E;
             margin-bottom: 4px;
         }
 
         .topo-dash p {
-            font-size: 14px;
+            font-size: clamp(13px, 1.1vw, 14px);
             color: #63331C;
         }
 
@@ -292,7 +293,7 @@
             justify-content: space-between;
             align-items: center;
             background: #ffffff;
-            padding: 20px 26px;
+            padding: clamp(16px, 1.6vw, 20px) clamp(18px, 2vw, 26px);
             border-radius: 14px;
             border-left: 6px solid #63331C;
             box-shadow: 0 4px 14px rgba(45, 24, 14, 0.06);
@@ -311,7 +312,7 @@
         }
 
         .nome-hotel {
-            font-size: 26px;
+            font-size: clamp(21px, 2.1vw, 26px);
             color: #2D180E;
             margin-bottom: 4px;
         }
@@ -345,8 +346,8 @@
 
         .cards-kpi {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(12px, 1.4vw, 18px);
             width: 100%;
             margin-bottom: 24px;
         }
@@ -355,7 +356,7 @@
             background-color: #ffffff;
             border: 1px solid #e2dad0;
             border-radius: 14px;
-            padding: 20px 22px;
+            padding: clamp(16px, 1.6vw, 20px) clamp(16px, 1.8vw, 22px);
             box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
             display: flex;
             flex-direction: column;
@@ -384,7 +385,7 @@
         }
 
         .valor-kpi {
-            font-size: 38px;
+            font-size: clamp(28px, 3vw, 38px);
             font-weight: 800;
             color: #2D180E;
         }
@@ -424,7 +425,7 @@
             background-color: #ffffff;
             border: 1px solid #e2dad0;
             border-radius: 14px;
-            padding: 22px;
+            padding: clamp(16px, 1.75vw, 22px);
             box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
         }
 
@@ -437,7 +438,7 @@
         }
 
         .canvas-holder {
-            height: 250px;
+            height: clamp(190px, 20vw, 250px);
             width: 100%;
             position: relative;
         }
@@ -460,7 +461,7 @@
             background-color: #ffffff;
             border: 1px solid #e2dad0;
             border-radius: 14px;
-            padding: 24px;
+            padding: clamp(18px, 1.9vw, 24px);
             box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
         }
 
@@ -556,6 +557,129 @@
 
         .display-none { display: none; }
         .display-block { display: block; }
+
+        @media (max-width: 1100px) {
+            .cards-kpi {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .graficos-container,
+            .secao-detalhes {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .topo-dash,
+            .banner-hotel {
+                align-items: flex-start;
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .janela {
+                display: block;
+            }
+
+            .header-left {
+                position: relative;
+                width: 100%;
+                height: auto;
+                min-height: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 10px;
+                padding: 14px 5%;
+                border-right: 0;
+                border-bottom: 3px solid #814D35;
+            }
+
+            .titulo-logo {
+                flex: 1 1 auto;
+            }
+
+            .hello {
+                width: auto;
+                max-width: 60%;
+            }
+
+            .resumo-pesquisa-lateral {
+                flex: 1 0 100%;
+            }
+
+            .btn-nav,
+            .btn-nav-white,
+            .btn-logout {
+                width: auto;
+                flex: 1 1 auto;
+                padding: 10px 12px;
+            }
+
+            .dash {
+                width: 100%;
+                left: 0;
+                min-height: 0;
+                padding: clamp(16px, 4vw, 28px) 5% 36px;
+            }
+
+            .topo-dash h2 {
+                font-size: clamp(18px, 3vw, 22px);
+            }
+
+            .banner-status {
+                flex-wrap: wrap;
+            }
+
+            .area-parametros-alerta {
+                padding: 12px;
+            }
+
+            .item-regua {
+                font-size: clamp(10px, 2vw, 13px);
+            }
+
+            .item-regua p:nth-child(2) {
+                font-size: clamp(10px, 2.1vw, 14px);
+            }
+
+            .item-ficha strong,
+            .lista-contatos p {
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards-kpi,
+            .graficos-container,
+            .secao-detalhes {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .grid-ficha {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .topo-dash,
+            .banner-hotel,
+            .graph-box,
+            .card-ficha {
+                padding: 16px;
+            }
+
+            .valor-kpi {
+                font-size: clamp(27px, 9vw, 38px);
+            }
+
+            .canvas-holder {
+                height: 210px;
+            }
+
+            .btn-chart {
+                width: 100%;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 

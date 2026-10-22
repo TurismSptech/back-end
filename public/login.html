@@ -9,6 +9,7 @@
     <title>TourWise | Login</title>
 
     <script src="./js/sessao.js"></script>
+    <script src="./js/auth-nav.js" defer></script>
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/auth.css">
@@ -23,12 +24,18 @@
         <a class="auth-brand" href="index.html" aria-label="TourWise - página inicial">
             <span>Tour</span>Wise
         </a>
-        <div class="auth-nav-links">
+        <button class="auth-menu-toggle" type="button" aria-expanded="false" aria-controls="auth-nav-links" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="auth-nav-links" id="auth-nav-links">
             <a href="index.html">Home</a>
             <a href="index.html#solucoes">Soluções</a>
             <a href="index.html#sobre-nos">Sobre nós</a>
             <a href="index.html#como-funciona">Como funciona</a>
             <a href="index.html#contato">Contato</a>
+            <a class="auth-mobile-action" href="cadastro.html">Cadastro</a>
         </div>
         <a class="auth-nav-action" href="cadastro.html">Cadastro</a>
     </nav>
@@ -64,12 +71,8 @@
     <footer class="auth-footer">TourWise · Inteligência para o turismo</footer>
 
 </body>
-
 </html>
-
 <script>
-
-
     function entrar() {
         aguardar();
 
@@ -103,7 +106,7 @@
                     sessionStorage.AQUARIOS = JSON.stringify([]);
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashTeste.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

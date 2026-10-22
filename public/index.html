@@ -10,20 +10,27 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="icon" type="image/png" href=".assets/imgs/logo.png">
     <script src="js/mailer.js"></script>
+    <script src="js/auth-nav.js" defer></script>
   </head>
   <body>
-    <nav>
+    <nav class="site-nav">
         
         <div class="titulo">
             <p><Span>Tour</Span>Wise</p>
         </div>
 
-        <div class="links">
+        <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="links" id="site-nav-links">
             <a href="index.html" class="escolhaLinks">Home</a>
             <a href="#solucoes" class="escolhaLinks">Soluções</a>
             <a href="#sobre-nos" class="escolhaLinks">Sobre Nós</a>
             <a href="#como-funciona" class="escolhaLinks">Como Funciona</a>
             <a href="#contato" class="escolhaLinks">Contato</a>
+            <a href="login.html" class="escolhaLinks site-mobile-action">Login</a>
         </div>
         <div class="btn-login">
             <a href="login.html" class="escolhaLinks login">Login</a>

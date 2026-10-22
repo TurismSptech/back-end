@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-  --tamanho-header: 64px;
+  --tamanho-header: clamp(56px, 5vw, 72px);
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
@@ -17,7 +17,7 @@ body {
 
 .container {
   display: flex;
-  width: 80%;
+  width: min(90%, 1200px);
   margin: auto;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: min(38vw, 300px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,6 +54,7 @@ body {
   color: #32b9cd;
   width: fit-content;
   font-weight: 500;
+  font-size: clamp(18px, 1.7vw, 22px);
 }
 
 .header h1 {
@@ -76,10 +77,10 @@ body {
 }
 
 .banner .container p {
-  width: 50%;
+  width: min(70%, 720px);
   margin: 0;
   padding: 0;
-  font-size: 36px;
+  font-size: clamp(24px, 3vw, 36px);
 }
 
 .banner .container span {
@@ -98,7 +99,7 @@ body {
 }
 
 .box img {
-  width: 170px;
+  width: clamp(110px, 13vw, 170px);
 }
 
 .social .container .boxes {
@@ -122,10 +123,10 @@ body {
 
 .footer {
   background-color: #32b9cd;
-  height: 150px;
+  min-height: clamp(80px, 10vw, 120px);
   color: #fff;
   display: flex;
-  font-size: 15px;
+  font-size: clamp(12px, 1.15vw, 15px);
 }
 
 .footer .container {
@@ -152,7 +153,7 @@ body {
 }
 
 .card {
-  width: 50%;
+  width: min(90%, 620px);
   background-color: #e5e5e5;
   border-radius: 10px;
   display: flex;
@@ -161,12 +162,12 @@ body {
   color: palevioletred;
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  padding: clamp(16px, 2vw, 24px) 0;
 }
 
 .card h2 {
   margin: 0;
-  font-size: 30px;
+  font-size: clamp(22px, 2.5vw, 30px);
 }
 
 .formulario {
@@ -178,7 +179,7 @@ body {
 }
 
 .formulario span {
-  font-size: 15px;
+  font-size: clamp(13px, 1.15vw, 15px);
   font-weight: 800;
 }
 
@@ -193,7 +194,7 @@ body {
   border: 2px solid #32b9cd;
   background-color: white;
   color: gray;
-  height: 36px;
+  min-height: clamp(34px, 3vw, 40px);
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -203,7 +204,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 5px 0;
+  padding: clamp(4px, 0.5vw, 6px) 0;
 }
 
 .botao {
@@ -212,11 +213,11 @@ body {
   border: 0;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: clamp(15px, 1.4vw, 18px);
   color: #fff;
   background-color: #ED145B;
-  width: 120px;
-  height: 30px;
+  min-width: 120px;
+  min-height: 36px;
   align-self: center;
   margin-top: 20px;
 }
@@ -310,8 +311,21 @@ input {
 
 .simulador .container {
   flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
+  overflow: visible;
+  min-height: var(--tamanho-simulador);
+  height: auto;
+  padding: clamp(20px, 4vw, 48px) 0;
+}
+
+.simulador h2 {
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  font-size: clamp(24px, 2.6vw, 34px);
+}
+
+.simulador p {
+  margin: 0 0 clamp(12px, 1.5vw, 20px);
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.65;
 }
 
 /* ALERTA */
@@ -325,17 +339,18 @@ input {
 .mensagem-alarme {
   background-color: white;
   border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  padding: 10px 0;
+  width: min(300px, calc(100vw - 24px));
+  min-height: 80px;
+  height: auto;
+  margin: clamp(6px, 1vw, 10px);
+  padding: 10px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .mensagem-alarme h3 {
-  font-size: 14px;
+  font-size: clamp(12px, 1.1vw, 14px);
   margin: 0;
 }
 
@@ -344,8 +359,8 @@ input {
 }
 
 .alarme-sino {
-  width: 48px;
-  height: 48px;
+  width: clamp(34px, 3.8vw, 48px);
+  height: clamp(34px, 3.8vw, 48px);
   animation-name: bell;
   animation-duration: 4s;
   background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
