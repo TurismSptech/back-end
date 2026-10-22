@@ -17,8 +17,8 @@ body {
   justify-content: space-between;
   width: 100%;
   height: auto;
-  min-height: 60px;
-  padding: 0 5%;
+  min-height: clamp(54px, 4.7vw, 60px);
+  padding: 0 clamp(16px, 5vw, 64px);
   background: #f5f1ea;
   box-shadow: 0 2px 16px rgba(45, 24, 14, 0.1);
 }
@@ -26,13 +26,34 @@ body {
 .auth-brand {
   flex: 0 0 auto;
   color: #2d180e;
-  font-size: 22px;
+  font-size: clamp(19px, 1.7vw, 22px);
   font-weight: 800;
   letter-spacing: -0.8px;
 }
 
 .auth-brand span {
   color: #814d35;
+}
+
+.auth-menu-toggle {
+  display: none;
+  width: clamp(38px, 3.3vw, 42px);
+  height: clamp(38px, 3.3vw, 42px);
+  padding: clamp(8px, 0.8vw, 10px);
+  border: 1px solid #d9cabc;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.auth-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: #63331c;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .auth-nav-links {
@@ -55,13 +76,17 @@ body {
   color: #a37a5e;
 }
 
+.auth-mobile-action {
+  display: none;
+}
+
 .auth-nav-action {
   flex: 0 0 auto;
-  padding: 10px 22px;
+  padding: clamp(8px, 0.8vw, 10px) clamp(16px, 1.8vw, 22px);
   border-radius: 8px;
   background: #63331c;
   color: #fff;
-  font-size: 15px;
+  font-size: clamp(13px, 1.15vw, 15px);
   font-weight: 600;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -76,29 +101,29 @@ body {
   flex: 1 0 auto;
   display: flex;
   align-items: center;
-  padding: 28px max(5%, calc((100vw - 1200px) / 2));
+  padding: clamp(18px, 2.2vw, 28px) max(4%, calc((100vw - 1200px) / 2));
   background:
     linear-gradient(90deg, rgba(45, 24, 14, 0.68), rgba(45, 24, 14, 0.1)),
     url("../assets/imgs/Home/Servico1.png") center / cover no-repeat;
 }
 
 .auth-panel {
-  width: min(100%, 500px);
-  padding: 28px 38px;
+  width: min(100%, clamp(340px, 63vw, 500px));
+  padding: clamp(22px, 2.2vw, 28px) clamp(22px, 3vw, 38px);
   border: 1px solid rgba(238, 229, 217, 0.9);
-  border-radius: 16px;
+  border-radius: clamp(12px, 1.25vw, 16px);
   background: rgba(250, 248, 244, 0.97);
   box-shadow: 0 18px 50px rgba(45, 24, 14, 0.22);
 }
 
 .auth-panel-register {
-  width: min(100%, 520px);
+  width: min(100%, clamp(360px, 65vw, 520px));
 }
 
 .auth-eyebrow {
   margin-bottom: 5px;
   color: #814d35;
-  font-size: 12px;
+  font-size: clamp(11px, 0.95vw, 12px);
   font-weight: 700;
   letter-spacing: 1.1px;
   text-transform: uppercase;
@@ -107,14 +132,14 @@ body {
 .auth-panel h1 {
   margin: 0;
   color: #2d180e;
-  font-size: clamp(24px, 3vw, 28px);
+  font-size: clamp(23px, 2.3vw, 29px);
   line-height: 1.15;
 }
 
 .auth-description {
-  margin: 7px 0 14px;
+  margin: clamp(6px, 0.6vw, 8px) 0 clamp(11px, 1.1vw, 14px);
   color: #806957;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 14px);
   line-height: 1.6;
 }
 
@@ -124,24 +149,24 @@ body {
 }
 
 .auth-form label {
-  margin: 0 0 4px;
+  margin: 0 0 clamp(3px, 0.35vw, 4px);
   color: #63331c;
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   font-weight: 600;
 }
 
 .auth-form input,
 .auth-form select {
   width: 100%;
-  min-height: 39px;
-  margin: 0 0 10px;
-  padding: 8px 12px;
+  min-height: clamp(37px, 3.2vw, 41px);
+  margin: 0 0 clamp(8px, 0.8vw, 10px);
+  padding: clamp(7px, 0.65vw, 8px) clamp(10px, 1vw, 12px);
   border: 1px solid #d9cabc;
   border-radius: 8px;
   outline: none;
   background: #fff;
   color: #2d180e;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 14px);
   text-align: left;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -158,14 +183,14 @@ body {
 
 .auth-submit {
   width: 100%;
-  min-height: 41px;
-  margin-top: 3px;
+  min-height: clamp(39px, 3.3vw, 43px);
+  margin-top: clamp(2px, 0.25vw, 3px);
   border: 0;
   border-radius: 8px;
   background: #63331c;
   color: #fff;
   cursor: pointer;
-  font-size: 15px;
+  font-size: clamp(14px, 1.15vw, 15px);
   font-weight: 700;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -173,12 +198,12 @@ body {
 .auth-message {
   display: none;
   margin: 0 0 14px;
-  padding: 9px 11px;
+  padding: clamp(8px, 0.75vw, 9px) clamp(9px, 0.9vw, 11px);
   border: 1px solid #d9cabc;
   border-radius: 8px;
   background: #fff;
   color: #63331c;
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   line-height: 1.45;
 }
 
@@ -195,9 +220,9 @@ body {
 }
 
 .auth-switch {
-  margin: 12px 0 0;
+  margin: clamp(10px, 1vw, 12px) 0 0;
   color: #806957;
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   text-align: center;
 }
 
@@ -209,34 +234,69 @@ body {
 
 .auth-footer {
   flex: 0 0 auto;
-  padding: 17px 20px;
+  padding: clamp(13px, 1.35vw, 17px) clamp(14px, 1.6vw, 20px);
   background: #2d180e;
   color: #f5f1ea;
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 13px);
   text-align: center;
 }
 
 @media (max-width: 760px) {
   .auth-nav {
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 14px 5%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 9px 5%;
+  }
+
+  .auth-menu-toggle {
+    display: block;
+    order: 2;
+  }
+
+  .auth-menu-toggle:focus-visible {
+    outline: 3px solid rgba(129, 77, 53, 0.35);
+    outline-offset: 2px;
   }
 
   .auth-nav-links {
     order: 3;
-    flex: 1 1 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
     min-width: 0;
-    gap: 8px 16px;
-    margin: 4px 0 0;
+    gap: 0;
+    margin: 8px 0 0;
+    padding: 8px 0 4px;
+    border-top: 1px solid #e1d6ca;
+  }
+
+  .auth-nav.is-open .auth-nav-links {
+    display: flex;
   }
 
   .auth-nav-links a {
-    flex: 0 1 auto;
-    font-size: 13px;
+    display: block;
+    width: 100%;
+    padding: 10px 4px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .auth-nav > .auth-nav-action {
+    display: none;
+  }
+
+  .auth-nav-links .auth-mobile-action {
+    display: block;
+    margin-top: 5px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #63331c;
+    color: #fff;
+    font-weight: 600;
     text-align: center;
   }
 
@@ -246,6 +306,7 @@ body {
 
   .auth-panel,
   .auth-panel-register {
+    width: min(100%, 500px);
     max-width: 500px;
     margin: 0 auto;
     padding: 24px;

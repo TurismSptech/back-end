@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Simulador</title>
+    <title>TourWise | Simulador</title>
 
     <script src="./js/sessao.js"></script>
+    <script src="./js/auth-nav.js" defer></script>
 
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,25 +19,27 @@
 
 <body>
 
-    <!--header inicio-->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">Inicial</a>
-                </li>
-                <li class="agora">Simulador</li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./login.html">Cadastro</a>
-                </li>
-            </ul>
+    <nav class="site-nav">
+        <div class="titulo">
+            <p><span>Tour</span>Wise</p>
         </div>
-    </div>
+        <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="links" id="site-nav-links">
+            <a href="./index.html" class="escolhaLinks">Home</a>
+            <a href="./index.html#solucoes" class="escolhaLinks">Soluções</a>
+            <a href="./index.html#sobre-nos" class="escolhaLinks">Sobre Nós</a>
+            <a href="./index.html#como-funciona" class="escolhaLinks">Como Funciona</a>
+            <a href="./index.html#contato" class="escolhaLinks">Contato</a>
+            <a href="./cadastro.html" class="escolhaLinks site-mobile-action">Cadastro</a>
+        </div>
+        <div class="btn-login">
+            <a href="./login.html" class="escolhaLinks login">Login</a>
+        </div>
+    </nav>
 
 
     <!-- simulador inicio -->

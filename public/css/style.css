@@ -24,16 +24,56 @@ button, input, textarea {
 
 nav {
     width: 100%;
-    height: 48px;
+    height: clamp(48px, 4.2vw, 64px);
     background: #eee5d97f;
     display: flex;
     justify-items: center;
     align-items: center;
     padding: 0 5%;
-    gap: 10px;
+    gap: clamp(6px, 1vw, 14px);
     position: relative ;
     z-index: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.site-nav {
+    justify-content: space-between;
+}
+
+.site-nav .titulo {
+    flex: 0 0 auto;
+}
+
+.site-nav .links {
+    flex: 1 1 auto;
+}
+
+.site-nav .btn-login {
+    flex: 0 0 auto;
+}
+
+.site-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    border: 1px solid #d9cabc;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.site-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 4px 0;
+    border-radius: 2px;
+    background: #63331c;
+}
+
+.site-mobile-action {
+    display: none;
 }
 
 .titulo {
@@ -43,7 +83,7 @@ nav {
 }
 
 .titulo p {
-    font-size: 20px;
+    font-size: clamp(17px, 1.6vw, 22px);
     font-weight: 700;
     color: #814D35;
 
@@ -58,12 +98,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: clamp(12px, 2.2vw, 30px);
 }
 
 .escolhaLinks {
     color: #63331C;
-    font-size: 15px;
+    font-size: clamp(13px, 1.15vw, 15px);
     font-weight: 500;
     transition: 0.3s;
 }
@@ -84,7 +124,7 @@ nav {
 .escolhaLinks.login {
     background: #63331C;
     color: #ffffff;
-    padding: 8px 20px;
+    padding: clamp(7px, 0.7vw, 9px) clamp(14px, 1.6vw, 20px);
     border-radius: 8px;
 }
 
@@ -92,9 +132,74 @@ nav {
     background: #2D180E;
 }
 
+@media (max-width: 860px) {
+    nav.site-nav {
+        height: auto;
+        min-height: 60px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0;
+        padding: 8px 5%;
+    }
+
+    .site-nav .titulo {
+        width: auto;
+    }
+
+    .site-menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .site-menu-toggle:focus-visible {
+        outline: 3px solid rgba(129, 77, 53, 0.35);
+        outline-offset: 2px;
+    }
+
+    .site-nav .links {
+        display: none;
+        order: 3;
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        gap: 0;
+        margin: 8px 0 0;
+        padding: 8px 0 4px;
+        border-top: 1px solid #e1d6ca;
+    }
+
+    .site-nav.is-open .links {
+        display: flex;
+    }
+
+    .site-nav .links a {
+        display: block;
+        width: 100%;
+        padding: 10px 4px;
+        text-align: left;
+    }
+
+    .site-nav .btn-login {
+        display: none;
+    }
+
+    .site-nav .links .site-mobile-action {
+        display: block;
+        margin-top: 5px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: #63331c;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
 #hero-section {
     width: 100%;
-    height: 500px;
+    height: clamp(320px, 39vw, 500px);
     position: relative;
 }
 
@@ -127,17 +232,17 @@ nav {
 
 .indicador {
     position: absolute;
-    bottom: 25px;
+    bottom: clamp(16px, 2vw, 25px);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: clamp(7px, 0.8vw, 10px);
     z-index: 2;
 }
 
 .indica {
-    width: 10px;
-    height: 10px;
+    width: clamp(8px, 0.8vw, 10px);
+    height: clamp(8px, 0.8vw, 10px);
     border-radius: 50%;
     background: #ffffff;
     opacity: 0.5;
@@ -149,25 +254,25 @@ nav {
 }
 
 .servicos {
-    padding: 90px 8%;
+    padding: clamp(48px, 7vw, 90px) clamp(5%, 8vw, 8%);
     background: #ffffff;
 }
 
 .servicos-titulos {
     text-align: center;
     max-width: 750px;
-    margin: 0 auto 50px;
+    margin: 0 auto clamp(28px, 4vw, 50px);
 }
 
 .servicos-titulo {
-    font-size: 36px;
+    font-size: clamp(26px, 2.8vw, 36px);
     font-weight: 700;
     color: #2D180E;
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 1.2vw, 15px);
 }
 
 .servicos-texto {
-    font-size: 17px;
+    font-size: clamp(14px, 1.35vw, 17px);
     line-height: 1.7;
     color: #A37A5E;
 }
@@ -175,16 +280,16 @@ nav {
 .servicos-cards {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: clamp(14px, 2vw, 25px);
     max-width: 1150px;
     margin: auto;
 }
 
 .servicos-card {
     flex: 1;
-    min-height: 220px;
-    padding: 35px 30px;
-    border-radius: 14px;
+    min-height: clamp(180px, 17vw, 220px);
+    padding: clamp(22px, 2.8vw, 35px) clamp(20px, 2.4vw, 30px);
+    border-radius: clamp(10px, 1.1vw, 14px);
     background: #eee5d97f;
     border: 1px solid #eee5d97f;
     transition: 0.3s;
@@ -196,15 +301,15 @@ nav {
 }
 
 .servicos-curso {
-    font-size: 21px;
+    font-size: clamp(18px, 1.65vw, 21px);
     font-weight: 700;
     color: #814D35;
-    margin-bottom: 18px;
+    margin-bottom: clamp(12px, 1.4vw, 18px);
 }
 
 .servicos-descricao {
     color: #A37A5E;
-    font-size: 15px;
+    font-size: clamp(13px, 1.2vw, 15px);
     line-height: 1.7;
 }
 
@@ -212,8 +317,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 70px;
-    padding: 100px 9%;
+    gap: clamp(28px, 5.5vw, 70px);
+    padding: clamp(54px, 7.8vw, 100px) clamp(5%, 9vw, 9%);
     background: #eee5d97f;
 }
 
@@ -223,10 +328,10 @@ nav {
 }
 
 .conhecer-titulo {
-    font-size: 38px;
+    font-size: clamp(28px, 3vw, 38px);
     line-height: 1.25;
     color: #2D180E;
-    margin-bottom: 25px;
+    margin-bottom: clamp(16px, 2vw, 25px);
 }
 
 .conhecer-titulo span {
@@ -235,17 +340,17 @@ nav {
 
 .conhecer-texto {
     color: #A37A5E;
-    font-size: 16px;
+    font-size: clamp(14px, 1.25vw, 16px);
     line-height: 1.8;
 }
 
 .button-intro {
-    margin-top: 30px;
+    margin-top: clamp(20px, 2.4vw, 30px);
 }
 
 .conhecer-projeto {
     display: inline-block;
-    padding: 13px 25px;
+    padding: clamp(10px, 1vw, 13px) clamp(18px, 2vw, 25px);
     border-radius: 8px;
     background: #814D35;
     color: #ffffff;
@@ -259,83 +364,83 @@ nav {
 }
 
 .conhecer-img {
-    height: 580px;
+    height: clamp(320px, 45vw, 580px);
     width: 46%;
     max-width: 550px;
-    border-radius: 16px;
+    border-radius: clamp(10px, 1.25vw, 16px);
     box-shadow: 0 15px 40px rgba(25, 70, 57, 0.15);
 }
 
 .como-funciona {
-    padding: 90px 8%;
+    padding: clamp(48px, 7vw, 90px) clamp(5%, 8vw, 8%);
     background: #ffffff;
 }
 
 .como-titulo {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: clamp(30px, 4.3vw, 55px);
 }
 
 .como-titulo h2 {
-    font-size: 34px;
+    font-size: clamp(25px, 2.65vw, 34px);
     color: #2D180E;
-    margin-bottom: 12px;
+    margin-bottom: clamp(8px, 1vw, 12px);
 }
 
 .como-titulo p {
     color: #A37A5E;
-    font-size: 16px;
+    font-size: clamp(14px, 1.25vw, 16px);
 }
 
 .etapas-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: clamp(14px, 2vw, 25px);
     max-width: 1150px;
     margin: auto;
 }
 
 .etapa {
     flex: 1;
-    padding: 30px;
+    padding: clamp(20px, 2.4vw, 30px);
     background: #eee5d97f;
-    border-radius: 14px;
+    border-radius: clamp(10px, 1.1vw, 14px);
     border: 1px solid #eee5d97f;
 }
 
 .etapa-numero {
-    font-size: 15px;
+    font-size: clamp(13px, 1.2vw, 15px);
     font-weight: 700;
     color: #63331C;
-    margin-bottom: 20px;
+    margin-bottom: clamp(12px, 1.6vw, 20px);
 }
 
 .etapa h3 {
     color: #2D180E;
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: clamp(17px, 1.6vw, 20px);
+    margin-bottom: clamp(8px, 1vw, 12px);
 }
 
 .etapa p {
     color: #A37A5E;
-    font-size: 15px;
+    font-size: clamp(13px, 1.2vw, 15px);
     line-height: 1.6;
 }
 
 .recursos {
-    padding: 90px 8%;
+    padding: clamp(48px, 7vw, 90px) clamp(5%, 8vw, 8%);
     background: #f1ede77f;
 }
 
 .recursos-titulo {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: clamp(28px, 4vw, 50px);
 }
 
 .recursos-titulo h2 {
-    font-size: 34px;
+    font-size: clamp(25px, 2.65vw, 34px);
     color: #2D180E;
-    margin-bottom: 12px;
+    margin-bottom: clamp(8px, 1vw, 12px);
 }
 
 .recursos-titulo p {
@@ -344,41 +449,41 @@ nav {
 
 .recursos-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.75vw, 22px);
     max-width: 1150px;
     margin: auto;
 }
 
 .recurso-card {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 14px;
+    padding: clamp(18px, 2.4vw, 30px);
+    border-radius: clamp(10px, 1.1vw, 14px);
     border: 1px solid #e0e9e5;
 }
 
 .recurso-card h3 {
     color: #63331C;
-    font-size: 19px;
-    margin-bottom: 15px;
+    font-size: clamp(16px, 1.5vw, 19px);
+    margin-bottom: clamp(9px, 1.2vw, 15px);
 }
 
 .recurso-card p {
     color: #A37A5E;
-    font-size: 14px;
+    font-size: clamp(12px, 1.1vw, 14px);
     line-height: 1.7;
 }
 
 .formulario {
-    padding: 90px 20px;
+    padding: clamp(48px, 7vw, 90px) clamp(16px, 4vw, 40px);
     background: #ffffff;
 }
 
 .formulario form {
     width: 100%;
-    max-width: 600px;
+    max-width: min(600px, 100%);
     margin: auto;
-    padding: 45px;
+    padding: clamp(24px, 3.5vw, 45px);
     background: #f1ede77f;
     border: 1px solid #f1ede77f;
     border-radius: 16px;
@@ -387,15 +492,15 @@ nav {
 .tituloCont {
     text-align: center;
     color: #63331C;
-    font-size: 30px;
-    margin-bottom: 35px;
+    font-size: clamp(23px, 2.35vw, 30px);
+    margin-bottom: clamp(20px, 2.7vw, 35px);
 }
 
 .labelContato {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: clamp(5px, 0.65vw, 8px);
     color: #63331C;
-    font-size: 14px;
+    font-size: clamp(13px, 1.1vw, 14px);
     font-weight: 600;
 }
 
@@ -403,12 +508,12 @@ nav {
     width: 100%;
     border: 1px solid #e1decf7f;
     border-radius: 8px;
-    padding: 13px 15px;
-    margin-bottom: 22px;
+    padding: clamp(10px, 1vw, 13px) clamp(11px, 1.2vw, 15px);
+    margin-bottom: clamp(14px, 1.7vw, 22px);
     background: #ffffff;
     color: #63331C;
     outline: none;
-    font-size: 14px;
+    font-size: clamp(13px, 1.1vw, 14px);
 }
 
 .inputContato:focus, .mensagemContato:focus {
@@ -416,18 +521,18 @@ nav {
 }
 
 .mensagemContato {
-    height: 130px;
+    height: clamp(100px, 10vw, 130px);
     resize: vertical;
 }
 
 .formulario button {
     width: 100%;
-    padding: 13px;
+    padding: clamp(10px, 1vw, 13px);
     border: none;
     border-radius: 8px;
     background: #63331C;
     color: #ffffff;
-    font-size: 15px;
+    font-size: clamp(14px, 1.2vw, 15px);
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
@@ -438,9 +543,193 @@ nav {
 }
 
 .footer {
-    padding: 25px;
+    padding: clamp(16px, 2vw, 25px);
     text-align: center;
     background: #2D180E;
     color: #dce9e4;
-    font-size: 13px;
+    font-size: clamp(12px, 1vw, 13px);
+}
+
+@media (max-width: 860px) {
+    #hero-section {
+        height: clamp(240px, 52vw, 400px);
+    }
+
+    .servicos,
+    .como-funciona,
+    .recursos {
+        padding: 56px 6%;
+    }
+
+    .servicos-titulos,
+    .como-titulo,
+    .recursos-titulo {
+        margin-bottom: 32px;
+    }
+
+    .servicos-titulo,
+    .como-titulo h2,
+    .recursos-titulo h2 {
+        font-size: 29px;
+    }
+
+    .servicos-cards {
+        flex-direction: column;
+        max-width: 560px;
+        gap: 16px;
+    }
+
+    .servicos-card {
+        min-height: 0;
+        padding: 26px;
+    }
+
+    .intro-site {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 60px 6%;
+    }
+
+    .intro {
+        max-width: none;
+    }
+
+    .conhecer-titulo {
+        font-size: 32px;
+    }
+
+    .conhecer-img {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        align-self: center;
+        aspect-ratio: 1.5;
+        object-fit: cover;
+    }
+
+    .etapas-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .etapa {
+        min-width: 0;
+        padding: 24px;
+    }
+
+    .recursos-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .recurso-card {
+        min-width: 0;
+        padding: 24px;
+    }
+
+    .formulario {
+        padding: 56px 6%;
+    }
+
+    .formulario form {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 540px) {
+    .servicos,
+    .como-funciona,
+    .recursos,
+    .formulario {
+        padding: 28px 5%;
+    }
+
+    .servicos-titulo,
+    .como-titulo h2,
+    .recursos-titulo h2 {
+        font-size: clamp(20px, 5.7vw, 22px);
+    }
+
+    .servicos-titulos,
+    .como-titulo,
+    .recursos-titulo {
+        margin-bottom: 22px;
+    }
+
+    .servicos-texto,
+    .como-titulo p,
+    .recursos-titulo p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    .servicos-card,
+    .etapa,
+    .recurso-card {
+        padding: 14px;
+    }
+
+    .servicos-cards,
+    .etapas-container,
+    .recursos-container {
+        gap: 10px;
+    }
+
+    .servicos-curso,
+    .recurso-card h3,
+    .etapa h3 {
+        font-size: 15px;
+        margin-bottom: 7px;
+    }
+
+    .servicos-descricao,
+    .etapa p,
+    .recurso-card p {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .intro-site {
+        gap: 20px;
+        padding: 32px 5%;
+    }
+
+    .conhecer-titulo {
+        margin-bottom: 14px;
+        font-size: clamp(22px, 6vw, 24px);
+    }
+
+    .conhecer-texto {
+        font-size: 12.5px;
+        line-height: 1.65;
+    }
+
+    .button-intro {
+        margin-top: 18px;
+    }
+
+    .conhecer-projeto {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    .conhecer-img {
+        aspect-ratio: 1.6;
+    }
+
+    .etapas-container,
+    .recursos-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .formulario form {
+        padding: 22px 16px;
+    }
+
+    .tituloCont {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
 }
