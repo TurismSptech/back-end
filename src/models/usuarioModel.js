@@ -2,8 +2,10 @@ var database = require("../database/config")
 
 function autenticar(email, senha) {
     var instrucaoSql = `
-        SELECT cod_usuario AS id, email, cargo, fk_agencia AS agenciaId
-        FROM usuario
+        SELECT id_usuario AS id, email, fk_agencia AS agenciaId, t.tipo AS cargo
+        FROM usuario u
+        JOIN tipo_usuario t
+        ON t.fk_usuario = u.id_usuario
         WHERE email = ? AND senha = ?;
     `;
     return database.executar(instrucaoSql, [email, senha]);
@@ -20,14 +22,23 @@ function listarAgencias() {
 
 function cadastrar(email, senha, fkAgencia) {
     var instrucaoSql = `
-        INSERT INTO usuario (email, senha, cargo, fk_agencia)
-        VALUES (?, ?, 'Agente', ?);
+        INSERT INTO usuario (email, senha, fk_agencia)
+        VALUES (?, ?, ?);      
     `;
     return database.executar(instrucaoSql, [email, senha, fkAgencia]);
+}
+
+function cadTipos(idUsuario) {
+    var instrucaoSql = `
+        INSERT INTO tipo_usuario (tipo, fk_usuario)
+        VALUES ('Agente', ?);
+    `;
+    return database.executar(instrucaoSql, [idUsuario]);
 }
 
 module.exports = {
     autenticar,
     cadastrar,
-    listarAgencias
+    listarAgencias,
+    cadTipos
 };

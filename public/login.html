@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/auth.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -101,12 +100,15 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.email;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CARGO_USUARIO = json.cargo;
                     sessionStorage.ID_AGENCIA = json.agenciaId;
-                    sessionStorage.AQUARIOS = JSON.stringify([]);
+                    sessionStorage.CARGO_USUARIO = json.cargo;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/dashTeste.html";
+                        if(sessionStorage.CARGO_USUARIO == "Agente"){
+                            window.location = "./dashboard/dashTeste.html";
+                        } else if(sessionStorage.CARGO_USUARIO == "adm"){
+                            window.location = "teste.html";
+                        }
                     }, 1000); // apenas para exibir o loading
 
                 });

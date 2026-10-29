@@ -41,14 +41,18 @@ function cadastrar(req, res) {
         res.status(400).send("Selecione uma agência válida.");
     } else {
         email = email.trim();
+        let userId;
         usuarioModel.cadastrar(email, senha, fkAgencia)
             .then(function (resultado) {
+                userId = resultado.insertId;
                 res.status(201).json({
-                    id: resultado.insertId,
+                    id: userId,
                     email: email,
                     cargo: "Agente",
                     agenciaId: fkAgencia
                 });
+            }).then(function (resultado) {
+                return usuarioModel.cadTipos(userId);
             })
             .catch(function (erro) {
                 if (erro.code === "ER_DUP_ENTRY") {
