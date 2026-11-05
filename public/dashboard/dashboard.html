@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TourWise | Dashboard do Hotel</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -16,8 +15,8 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f7f6;
+            font-family: Arial, sans-serif;
+            background-color: #f7f5f2;
             color: #2D180E;
         }
 
@@ -30,6 +29,7 @@
             width: 100%;
         }
 
+        /* menu lateral */
         .header-left {
             position: fixed;
             top: 0;
@@ -41,17 +41,15 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 28px 18px;
-            border-right: 3px solid #814D35;
+            padding: 24px 16px;
+            border-right: 1px solid #63331C;
             background-color: #2D180E;
             color: #ffffff;
         }
 
         .titulo-logo h1 {
             font-size: 28px;
-            font-weight: 700;
             color: #A37A5E;
-            letter-spacing: 0.5px;
         }
 
         .titulo-logo h1 span {
@@ -62,20 +60,20 @@
             width: 100%;
             text-align: center;
             padding: 12px 10px;
-            background: rgba(238, 229, 217, 0.08);
-            border-radius: 10px;
-            border: 1px solid rgba(163, 122, 94, 0.3);
+            background-color: #382218;
+            border-radius: 4px;
+            border: 1px solid #5a3d2c;
         }
 
         .hello h3 {
             color: #eee5d9;
-            font-weight: 400;
+            font-weight: normal;
             font-size: 16px;
             margin-bottom: 4px;
         }
 
         .hello h3 span {
-            font-weight: 700;
+            font-weight: bold;
             color: #ffffff;
         }
 
@@ -86,21 +84,21 @@
 
         .resumo-pesquisa-lateral {
             width: 100%;
-            background-color: rgba(238, 229, 217, 0.1);
+            background-color: #3a251a;
             border-left: 4px solid #814D35;
-            border-radius: 8px;
+            border-radius: 4px;
             padding: 14px;
             font-size: 13px;
-            line-height: 1.65;
+            line-height: 1.6;
             color: #eee5d9;
         }
 
         .resumo-pesquisa-lateral .resumo-titulo {
-            font-weight: 700;
+            font-weight: bold;
             color: #ffffff;
             margin-bottom: 6px;
             font-size: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid #5a4a40;
             padding-bottom: 4px;
         }
 
@@ -108,25 +106,23 @@
             width: 90%;
             color: #ffffff;
             background-color: #814D35;
-            border-radius: 8px;
+            border-radius: 4px;
             text-align: center;
             padding: 12px 15px;
             font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .btn-nav-white {
             width: 90%;
             background-color: transparent;
             border: 2px solid #814D35;
-            border-radius: 8px;
+            border-radius: 4px;
             text-align: center;
             padding: 10px 15px;
-            transition: 0.3s;
         }
 
         .btn-nav-white:hover {
-            background-color: rgba(129, 77, 53, 0.25);
+            background-color: #4a2a1c;
         }
 
         .btn-nav-white h3 {
@@ -136,8 +132,6 @@
 
         .btn-nav h3,
         .btn-logout h3 {
-            margin: 0;
-            padding: 0;
             font-size: 14px;
         }
 
@@ -145,23 +139,21 @@
             width: 65%;
             background-color: #63331C;
             color: #ffffff;
-            border-radius: 8px;
+            border-radius: 4px;
             text-align: center;
             padding: 10px 15px;
             cursor: pointer;
-            transition: 0.3s;
         }
 
         .btn-logout:hover {
             background-color: #814D35;
         }
 
+        /* area principal */
         .dash {
             width: 80%;
-            position: relative;
-            top: 0;
-            left: 20%;
-            background-color: #f5f7f6;
+            margin-left: 20%;
+            background-color: #f7f5f2;
             min-height: 100vh;
             padding: 28px 36px 50px 36px;
         }
@@ -172,7 +164,7 @@
             align-items: center;
             background-color: #eee5d9;
             padding: 18px 24px;
-            border-radius: 14px;
+            border-radius: 4px;
             border: 1px solid #e1d6c6;
             margin-bottom: 20px;
         }
@@ -192,7 +184,7 @@
             background-color: #ffffff;
             color: #63331C;
             padding: 8px 14px;
-            border-radius: 8px;
+            border-radius: 4px;
             font-size: 13px;
             border: 1px solid #d8c8b4;
         }
@@ -200,7 +192,6 @@
         .btns-dash {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
             gap: 12px;
             margin-bottom: 20px;
             flex-wrap: wrap;
@@ -209,18 +200,16 @@
         .btn-chart {
             font-family: inherit;
             border: 2px solid #63331C;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 14px;
             padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: 0.25s;
         }
 
         .btn-ativo {
             color: #ffffff;
             background-color: #63331C;
-            box-shadow: 0 4px 12px rgba(99, 51, 28, 0.25);
         }
 
         .btn-inativo {
@@ -232,21 +221,21 @@
             background-color: #eee5d9;
         }
 
+        /* legenda de alerta */
         .area-parametros-alerta {
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin: 0 auto 24px auto;
+            margin-bottom: 24px;
             background-color: #ffffff;
-            border-radius: 12px;
+            border-radius: 4px;
             padding: 14px 20px;
             border: 1px solid #e2dad0;
-            box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
         }
 
         .area-parametros-alerta .titulo-legenda {
             color: #2D180E;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 14px;
             margin-bottom: 10px;
         }
@@ -254,8 +243,6 @@
         .parametros-alerta {
             display: flex;
             width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
             gap: 4px;
         }
 
@@ -272,11 +259,10 @@
 
         .item-regua p {
             margin: 0;
-            font-weight: 500;
         }
 
         .item-regua p:nth-child(2) {
-            font-weight: 800;
+            font-weight: bold;
             font-size: 14px;
             margin-top: 2px;
         }
@@ -287,15 +273,16 @@
         .nivel-alto { background-color: #814D35; }
         .nivel-ideal { background-color: #4E7D56; }
 
+        /* banner do hotel */
         .banner-hotel {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #ffffff;
+            background-color: #ffffff;
             padding: 20px 26px;
-            border-radius: 14px;
+            border-radius: 4px;
+            border: 1px solid #e2dad0;
             border-left: 6px solid #63331C;
-            box-shadow: 0 4px 14px rgba(45, 24, 14, 0.06);
             margin-bottom: 22px;
         }
 
@@ -304,9 +291,9 @@
             background-color: #eee5d9;
             color: #63331C;
             font-size: 12px;
-            font-weight: 700;
+            font-weight: bold;
             padding: 4px 10px;
-            border-radius: 6px;
+            border-radius: 4px;
             margin-bottom: 6px;
         }
 
@@ -328,9 +315,9 @@
 
         .status-badge {
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: bold;
         }
 
         .status-badge.operacao {
@@ -343,6 +330,7 @@
             color: #63331C;
         }
 
+        /* kpis */
         .cards-kpi {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -354,9 +342,8 @@
         .card-kpi {
             background-color: #ffffff;
             border: 1px solid #e2dad0;
-            border-radius: 14px;
-            padding: 20px 22px;
-            box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
+            border-radius: 4px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -369,9 +356,8 @@
 
         .title-kpi h1 {
             font-size: 14px;
-            font-weight: 700;
             color: #63331C;
-            border-bottom: 1px solid rgba(129, 77, 53, 0.2);
+            border-bottom: 1px solid #d9c3b8;
             padding-bottom: 8px;
             margin-bottom: 12px;
         }
@@ -384,8 +370,8 @@
         }
 
         .valor-kpi {
-            font-size: 38px;
-            font-weight: 800;
+            font-size: 32px;
+            font-weight: bold;
             color: #2D180E;
         }
 
@@ -412,6 +398,7 @@
         .cor-alta { background-color: #814D35; }
         .cor-moderada { background-color: #A37A5E; }
 
+        /* graficos */
         .graficos-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -423,15 +410,13 @@
         .graph-box {
             background-color: #ffffff;
             border: 1px solid #e2dad0;
-            border-radius: 14px;
-            padding: 22px;
-            box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
+            border-radius: 4px;
+            padding: 18px;
         }
 
         .tituloGraficos {
             color: #2D180E;
             font-size: 16px;
-            font-weight: 700;
             margin-bottom: 16px;
             text-align: center;
         }
@@ -449,6 +434,7 @@
             margin-top: 12px;
         }
 
+        /* ficha do hotel */
         .secao-detalhes {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -459,9 +445,8 @@
         .card-ficha {
             background-color: #ffffff;
             border: 1px solid #e2dad0;
-            border-radius: 14px;
-            padding: 24px;
-            box-shadow: 0 4px 14px rgba(45, 24, 14, 0.05);
+            border-radius: 4px;
+            padding: 20px;
         }
 
         .card-ficha h3 {
@@ -481,7 +466,7 @@
         .item-ficha {
             background-color: #f9f7f4;
             padding: 10px 12px;
-            border-radius: 8px;
+            border-radius: 4px;
             border: 1px solid #eee5d9;
         }
 
@@ -515,9 +500,9 @@
             background-color: #eee5d9;
             color: #2D180E;
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: bold;
             border: 1px solid #d5c4b0;
         }
 
@@ -529,7 +514,7 @@
 
         .lista-contatos a {
             color: #814D35;
-            font-weight: 700;
+            font-weight: bold;
             text-decoration: underline;
         }
 
@@ -538,7 +523,7 @@
             background-color: #eee5d9;
             border-left: 4px solid #63331C;
             padding: 12px 14px;
-            border-radius: 8px;
+            border-radius: 4px;
         }
 
         .box-justificativa strong {
@@ -556,6 +541,70 @@
 
         .display-none { display: none; }
         .display-block { display: block; }
+
+        /* responsivo */
+        @media (max-width: 1100px) {
+            .header-left {
+                width: 240px;
+            }
+
+            .dash {
+                width: calc(100% - 240px);
+                margin-left: 240px;
+                padding: 24px;
+            }
+
+            .cards-kpi {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .graficos-container,
+            .secao-detalhes {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .janela {
+                display: block;
+            }
+
+            .header-left {
+                position: relative;
+                width: 100%;
+                height: auto;
+                gap: 18px;
+            }
+
+            .dash {
+                width: 100%;
+                margin-left: 0;
+                padding: 18px;
+            }
+
+            .topo-dash,
+            .banner-hotel {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .cards-kpi {
+                grid-template-columns: 1fr;
+            }
+
+            .parametros-alerta {
+                flex-wrap: wrap;
+            }
+
+            .item-regua {
+                width: calc(50% - 4px);
+            }
+
+            .grid-ficha {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -603,7 +652,7 @@
             <div class="topo-dash">
                 <div>
                     <h2>Análise Individual do Meio de Hospedagem</h2>
-                    <p>Clique em uma das opções recomendadas abaixo para inspecionar os indicadores do estabelecimento no Cadastur.</p>
+                    <p>Clique em uma das opções recomendadas abaixo para ver os indicadores do estabelecimento no Cadastur.</p>
                 </div>
                 <div class="badge-fonte">
                     Fonte Oficial: <strong>Cadastur (2º Trim / 2026)</strong>
@@ -612,19 +661,19 @@
 
             <div class="btns-dash" id="btnHoteis">
                 <button class="btn-chart btn-ativo" id="btnHotel1" onclick="selecionarHotel(1)">
-                    1º Lugar — Dublin Hotel (94%)
+                    1º Lugar - Dublin Hotel (94%)
                 </button>
                 <button class="btn-chart btn-inativo" id="btnHotel2" onclick="selecionarHotel(2)">
-                    2º Lugar — Hotel San Juan (85%)
+                    2º Lugar - Hotel San Juan (85%)
                 </button>
                 <button class="btn-chart btn-inativo" id="btnHotel3" onclick="selecionarHotel(3)">
-                    3º Lugar — Hotel Apolo (78%)
+                    3º Lugar - Hotel Apolo (78%)
                 </button>
             </div>
 
             <div class="area-parametros-alerta">
                 <p class="titulo-legenda">
-                    Régua de Apoio à Decisão — Parâmetros do Índice de Compatibilidade com a Viagem
+                    Parâmetros do Índice de Compatibilidade com a Viagem
                 </p>
                 <div class="parametros-alerta">
                     <div class="item-regua nivel-baixo">
@@ -650,16 +699,15 @@
                 </div>
             </div>
 
-            <!-- HOTEL 1 -->
             <div id="painelHotel1" class="painel-hotel display-block">
                 <div class="banner-hotel">
                     <div class="banner-info">
                         <span class="tag-ranking">#1 Mais Compatível com a Viagem</span>
                         <h1 class="nome-hotel">DUBLIN HOTEL</h1>
-                        <p class="local-hotel">📍 Rua Conselheiro Brotero, 854 — Santa Cecília, São Paulo - SP (CEP: 01232-010)</p>
+                        <p class="local-hotel">Rua Conselheiro Brotero, 854 - Santa Cecília, São Paulo - SP (CEP: 01232-010)</p>
                     </div>
                     <div class="banner-status">
-                        <span class="status-badge operacao">● Em Operação</span>
+                        <span class="status-badge operacao">Em Operação</span>
                         <span class="status-badge regular">Cadastur Regular</span>
                     </div>
                 </div>
@@ -671,7 +719,7 @@
                             <p class="valor-kpi">94<span class="unidade-kpi">/100</span></p>
                             <span class="bolinha-alerta cor-ideal"></span>
                         </div>
-                        <p class="sub-kpi">Excelente aderência aos 5 critérios da viagem</p>
+                        <p class="sub-kpi">Atende bem os 5 critérios da viagem</p>
                     </div>
                     <div class="card-kpi">
                         <div class="title-kpi"><h1>Unidades Habitacionais (Quartos)</h1></div>
@@ -705,7 +753,7 @@
 
                 <div class="secao-detalhes">
                     <div class="card-ficha">
-                        <h3>📋 Ficha Cadastral e Operacional (Cadastur)</h3>
+                        <h3>Ficha Cadastral e Operacional (Cadastur)</h3>
                         <div class="grid-ficha">
                             <div class="item-ficha"><span>Nome Fantasia:</span><strong>DUBLIN HOTEL</strong></div>
                             <div class="item-ficha"><span>CNPJ:</span><strong>00.603.575/0001-07</strong></div>
@@ -718,36 +766,35 @@
                         </div>
                     </div>
                     <div class="card-ficha">
-                        <h3>🌐 Idiomas de Atendimento e Canais de Contato</h3>
+                        <h3>Idiomas de Atendimento e Contato</h3>
                         <p class="label-bloco">Idiomas falados na recepção:</p>
                         <div class="badges-idiomas">
-                            <span class="badge-idioma">🇧🇷 Português</span>
-                            <span class="badge-idioma">🇺🇸 Inglês</span>
-                            <span class="badge-idioma">🇪🇸 Espanhol</span>
+                            <span class="badge-idioma">Português</span>
+                            <span class="badge-idioma">Inglês</span>
+                            <span class="badge-idioma">Espanhol</span>
                         </div>
                         <div class="lista-contatos">
-                            <p><strong>📞 Telefone Comercial:</strong> (11) 2776-0861</p>
-                            <p><strong>✉️ E-mail Comercial:</strong> hoteldublin2023@gmail.com</p>
-                            <p><strong>🔗 Website Oficial:</strong> <a href="https://www.dublinhotel.com.br/pt-br/" target="_blank">www.dublinhotel.com.br/pt-br/</a></p>
+                            <p><strong>Telefone Comercial:</strong> (11) 2776-0861</p>
+                            <p><strong>E-mail Comercial:</strong> hoteldublin2023@gmail.com</p>
+                            <p><strong>Website Oficial:</strong> <a href="https://www.dublinhotel.com.br/pt-br/" target="_blank">www.dublinhotel.com.br/pt-br/</a></p>
                         </div>
                         <div class="box-justificativa">
-                            <strong>💡 Por que o TourWise recomenda este hotel?</strong>
-                            <p>Possui a maior taxa de acessibilidade da região (90,3% das UHs adaptadas), atende nos 3 idiomas solicitados e comporta folgadamente o grupo de 12 viajantes.</p>
+                            <strong>Por que o TourWise recomenda este hotel?</strong>
+                            <p>Possui a maior taxa de acessibilidade da região (90,3% das UHs adaptadas), atende nos 3 idiomas solicitados e comporta o grupo de 12 viajantes.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- HOTEL 2 -->
             <div id="painelHotel2" class="painel-hotel display-none">
                 <div class="banner-hotel">
                     <div class="banner-info">
                         <span class="tag-ranking">#2 Opção de Maior Porte</span>
                         <h1 class="nome-hotel">HOTEL SAN JUAN</h1>
-                        <p class="local-hotel">📍 Rua Aurora, 333 — Santa Efigênia, São Paulo - SP (CEP: 01209-001)</p>
+                        <p class="local-hotel">Rua Aurora, 333 - Santa Efigênia, São Paulo - SP (CEP: 01209-001)</p>
                     </div>
                     <div class="banner-status">
-                        <span class="status-badge operacao">● Em Operação</span>
+                        <span class="status-badge operacao">Em Operação</span>
                         <span class="status-badge regular">Cadastur Regular</span>
                     </div>
                 </div>
@@ -759,7 +806,7 @@
                             <p class="valor-kpi">85<span class="unidade-kpi">/100</span></p>
                             <span class="bolinha-alerta cor-alta"></span>
                         </div>
-                        <p class="sub-kpi">Alta compatibilidade (Ótima capacidade física)</p>
+                        <p class="sub-kpi">Alta compatibilidade (boa capacidade física)</p>
                     </div>
                     <div class="card-kpi">
                         <div class="title-kpi"><h1>Unidades Habitacionais (Quartos)</h1></div>
@@ -769,7 +816,7 @@
                     <div class="card-kpi">
                         <div class="title-kpi"><h1>Capacidade Total de Leitos</h1></div>
                         <div class="desc-kpi"><p class="valor-kpi">114 <span class="unidade-kpi">Leitos</span></p></div>
-                        <p class="sub-kpi">Média de <strong>1,84 leitos por quarto</strong> (Ampla estrutura)</p>
+                        <p class="sub-kpi">Média de <strong>1,84 leitos por quarto</strong> (Estrutura grande)</p>
                     </div>
                     <div class="card-kpi">
                         <div class="title-kpi"><h1>Leitos Acessíveis (PcD)</h1></div>
@@ -793,7 +840,7 @@
 
                 <div class="secao-detalhes">
                     <div class="card-ficha">
-                        <h3>📋 Ficha Cadastral e Operacional (Cadastur)</h3>
+                        <h3>Ficha Cadastral e Operacional (Cadastur)</h3>
                         <div class="grid-ficha">
                             <div class="item-ficha"><span>Nome Fantasia:</span><strong>SAN JUAN</strong></div>
                             <div class="item-ficha"><span>CNPJ:</span><strong>00.825.082/0001-03</strong></div>
@@ -806,35 +853,34 @@
                         </div>
                     </div>
                     <div class="card-ficha">
-                        <h3>🌐 Idiomas de Atendimento e Canais de Contato</h3>
+                        <h3>Idiomas de Atendimento e Contato</h3>
                         <p class="label-bloco">Idiomas falados na recepção:</p>
                         <div class="badges-idiomas">
-                            <span class="badge-idioma">🇺🇸 Inglês</span>
-                            <span class="badge-idioma">🇪🇸 Espanhol</span>
+                            <span class="badge-idioma">Inglês</span>
+                            <span class="badge-idioma">Espanhol</span>
                         </div>
                         <div class="lista-contatos">
-                            <p><strong>📞 Telefone Comercial:</strong> (11) 3556-1200</p>
-                            <p><strong>✉️ E-mail Comercial:</strong> financeiro@sjhoteiseresort.com.br</p>
-                            <p><strong>🔗 Website Oficial:</strong> <a href="http://www.sanjuanhoteis.com.br" target="_blank">www.sanjuanhoteis.com.br</a></p>
+                            <p><strong>Telefone Comercial:</strong> (11) 3556-1200</p>
+                            <p><strong>E-mail Comercial:</strong> financeiro@sjhoteiseresort.com.br</p>
+                            <p><strong>Website Oficial:</strong> <a href="http://www.sanjuanhoteis.com.br" target="_blank">www.sanjuanhoteis.com.br</a></p>
                         </div>
                         <div class="box-justificativa">
-                            <strong>💡 Por que o TourWise recomenda este hotel?</strong>
-                            <p>Excelente opção para grupos maiores (62 quartos e 114 leitos), com atendimento bilíngue (Inglês/Espanhol) e 6 quartos adaptados para PcD.</p>
+                            <strong>Por que o TourWise recomenda este hotel?</strong>
+                            <p>Boa opção para grupos maiores (62 quartos e 114 leitos), com atendimento em Inglês e Espanhol e 6 quartos adaptados para PcD.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- HOTEL 3 -->
             <div id="painelHotel3" class="painel-hotel display-none">
                 <div class="banner-hotel">
                     <div class="banner-info">
                         <span class="tag-ranking">#3 Opção Compacta e Acessível</span>
                         <h1 class="nome-hotel">HOTEL APOLO</h1>
-                        <p class="local-hotel">📍 Rua Pedro Vicente, 130 — Luz, São Paulo - SP (CEP: 01109-010)</p>
+                        <p class="local-hotel">Rua Pedro Vicente, 130 - Luz, São Paulo - SP (CEP: 01109-010)</p>
                     </div>
                     <div class="banner-status">
-                        <span class="status-badge operacao">● Em Operação</span>
+                        <span class="status-badge operacao">Em Operação</span>
                         <span class="status-badge regular">Cadastur Regular</span>
                     </div>
                 </div>
@@ -846,7 +892,7 @@
                             <p class="valor-kpi">78<span class="unidade-kpi">/100</span></p>
                             <span class="bolinha-alerta cor-moderada"></span>
                         </div>
-                        <p class="sub-kpi">Compatibilidade moderada (Apenas idioma Português)</p>
+                        <p class="sub-kpi">Compatibilidade moderada (apenas idioma Português)</p>
                     </div>
                     <div class="card-kpi">
                         <div class="title-kpi"><h1>Unidades Habitacionais (Quartos)</h1></div>
@@ -880,7 +926,7 @@
 
                 <div class="secao-detalhes">
                     <div class="card-ficha">
-                        <h3>📋 Ficha Cadastral e Operacional (Cadastur)</h3>
+                        <h3>Ficha Cadastral e Operacional (Cadastur)</h3>
                         <div class="grid-ficha">
                             <div class="item-ficha"><span>Nome Fantasia:</span><strong>Hotel Apolo</strong></div>
                             <div class="item-ficha"><span>CNPJ:</span><strong>01.674.200/0001-67</strong></div>
@@ -893,19 +939,19 @@
                         </div>
                     </div>
                     <div class="card-ficha">
-                        <h3>🌐 Idiomas de Atendimento e Canais de Contato</h3>
+                        <h3>Idiomas de Atendimento e Contato</h3>
                         <p class="label-bloco">Idiomas falados na recepção:</p>
                         <div class="badges-idiomas">
-                            <span class="badge-idioma">🇧🇷 Português</span>
+                            <span class="badge-idioma">Português</span>
                         </div>
                         <div class="lista-contatos">
-                            <p><strong>📞 Telefone Comercial:</strong> (11) 9229-8468</p>
-                            <p><strong>✉️ E-mail Comercial:</strong> alessandra.hotel.apolo@gmail.com</p>
-                            <p><strong>🔗 Website Oficial:</strong> <a href="https://apolohotel.com.br" target="_blank">apolohotel.com.br</a></p>
+                            <p><strong>Telefone Comercial:</strong> (11) 9229-8468</p>
+                            <p><strong>E-mail Comercial:</strong> alessandra.hotel.apolo@gmail.com</p>
+                            <p><strong>Website Oficial:</strong> <a href="https://apolohotel.com.br" target="_blank">apolohotel.com.br</a></p>
                         </div>
                         <div class="box-justificativa">
-                            <strong>💡 Por que o TourWise recomenda este hotel?</strong>
-                            <p>Possui boa proporção de quartos acessíveis (27,3%) e equipe registrada, porém perdeu pontos no ranking por não oferecer atendimento em Inglês/Espanhol e ter capacidade mais enxuta (26 leitos).</p>
+                            <strong>Por que o TourWise recomenda este hotel?</strong>
+                            <p>Possui boa proporção de quartos acessíveis (27,3%) e equipe registrada, mas perdeu pontos no ranking por não atender em Inglês/Espanhol e ter capacidade menor (26 leitos).</p>
                         </div>
                     </div>
                 </div>
@@ -954,8 +1000,8 @@
                 data: {
                     labels: ['Unidades Habitacionais (Quartos)', 'Capacidade de Leitos'],
                     datasets: [
-                        { label: 'Acessíveis (PcD)', data: [28, 72], backgroundColor: corVerdeAcessivel, borderRadius: 6 },
-                        { label: 'Padrão (Convencional)', data: [3, 8], backgroundColor: corBegeEscuro, borderRadius: 6 }
+                        { label: 'Acessíveis (PcD)', data: [28, 72], backgroundColor: corVerdeAcessivel, borderRadius: 4 },
+                        { label: 'Padrão (Convencional)', data: [3, 8], backgroundColor: corBegeEscuro, borderRadius: 4 }
                     ]
                 },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true } } }
@@ -969,7 +1015,7 @@
                         label: 'Pontuação Obtida (%)',
                         data: [100, 100, 95, 85, 100],
                         backgroundColor: [corMarromMedio, corMarromMedio, corVerdeAcessivel, corTerracota, corMarromMedio],
-                        borderRadius: 6
+                        borderRadius: 4
                     }]
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 100 } } }
@@ -980,8 +1026,8 @@
                 data: {
                     labels: ['Unidades Habitacionais (Quartos)', 'Capacidade de Leitos'],
                     datasets: [
-                        { label: 'Acessíveis (PcD)', data: [6, 12], backgroundColor: corVerdeAcessivel, borderRadius: 6 },
-                        { label: 'Padrão (Convencional)', data: [56, 102], backgroundColor: corBegeEscuro, borderRadius: 6 }
+                        { label: 'Acessíveis (PcD)', data: [6, 12], backgroundColor: corVerdeAcessivel, borderRadius: 4 },
+                        { label: 'Padrão (Convencional)', data: [56, 102], backgroundColor: corBegeEscuro, borderRadius: 4 }
                     ]
                 },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true } } }
@@ -995,7 +1041,7 @@
                         label: 'Pontuação Obtida (%)',
                         data: [100, 100, 60, 100, 90],
                         backgroundColor: [corMarromMedio, corMarromMedio, corTerracota, corVerdeAcessivel, corMarromMedio],
-                        borderRadius: 6
+                        borderRadius: 4
                     }]
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 100 } } }
@@ -1006,8 +1052,8 @@
                 data: {
                     labels: ['Unidades Habitacionais (Quartos)', 'Capacidade de Leitos'],
                     datasets: [
-                        { label: 'Acessíveis (PcD)', data: [6, 6], backgroundColor: corVerdeAcessivel, borderRadius: 6 },
-                        { label: 'Padrão (Convencional)', data: [16, 20], backgroundColor: corBegeEscuro, borderRadius: 6 }
+                        { label: 'Acessíveis (PcD)', data: [6, 6], backgroundColor: corVerdeAcessivel, borderRadius: 4 },
+                        { label: 'Padrão (Convencional)', data: [16, 20], backgroundColor: corBegeEscuro, borderRadius: 4 }
                     ]
                 },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true } } }
@@ -1021,7 +1067,7 @@
                         label: 'Pontuação Obtida (%)',
                         data: [100, 100, 75, 70, 40],
                         backgroundColor: [corMarromMedio, corMarromMedio, corVerdeAcessivel, corTerracota, corBegeEscuro],
-                        borderRadius: 6
+                        borderRadius: 4
                     }]
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 100 } } }
